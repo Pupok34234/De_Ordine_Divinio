@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://nxskckevl2sy"]
+
+[ext_resource type="Script" path="res://BV_NPC.gd" id="1_vearh"]
+[ext_resource type="Texture2D" uid="uid://xkhdlpd6mu15" path="res://oak_woods_v1.0/character/char_blue.png" id="2_ax286"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gn5mx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf7if"]
+atlas = ExtResource("2_ax286")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk8x6"]
+atlas = ExtResource("2_ax286")
+region = Rect2(56, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnajy"]
+atlas = ExtResource("2_ax286")
+region = Rect2(112, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxl20"]
+atlas = ExtResource("2_ax286")
+region = Rect2(168, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmhd8"]
+atlas = ExtResource("2_ax286")
+region = Rect2(224, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noalj"]
+atlas = ExtResource("2_ax286")
+region = Rect2(280, 0, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxabm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf7if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk8x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnajy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxl20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmhd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noalj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="BV_NPC" type="CharacterBody2D"]
+script = ExtResource("1_vearh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gn5mx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -13)
+sprite_frames = SubResource("SpriteFrames_pxabm")
+animation = &"idle"
+frame_progress = 0.246923

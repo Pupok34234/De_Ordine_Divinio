@@ -1,0 +1,10 @@
+{
+  "dialogue1": {
+    "speaker": "Character Name",
+    "text": "This is the first line of dialogue."
+  },
+  "dialogue2": {
+    "speaker": "Another Character",
+    "text": "This is another line of dialogue."
+  }
+}

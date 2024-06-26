@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://jocbrnfxxpxr"]
+
+[ext_resource type="Script" path="res://Ingamemenu.gd" id="1_dea10"]
+[ext_resource type="Script" path="res://escmenu.gd" id="2_ficdq"]
+
+[node name="Ingamemenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_dea10")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="xp" type="Label" parent="HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Button" type="Button" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "в меню
+"
+
+[node name="escmenu" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("2_ficdq")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="escmenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -33.0
+offset_right = 54.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="escmenu/HBoxContainer"]
+layout_mode = 2
+
+[node name="continue" type="Button" parent="escmenu/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "продолжить"
+
+[node name="MarginContainer2" type="MarginContainer" parent="escmenu/HBoxContainer"]
+layout_mode = 2
+
+[node name="tomenu" type="Button" parent="escmenu/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "в меню
+"
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="escmenu/HBoxContainer/MarginContainer/continue" to="escmenu" method="_on_continue_pressed"]
+[connection signal="pressed" from="escmenu/HBoxContainer/MarginContainer2/tomenu" to="escmenu" method="_on_tomenu_pressed"]

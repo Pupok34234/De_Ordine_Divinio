@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://goblwfiil1rw"]
+
+[ext_resource type="Script" path="res://dialogues/dialoguePlayer.gd" id="1_7pmat"]
+[ext_resource type="Texture2D" uid="uid://1v5bn4wtuim8" path="res://menus/dialogue_line.png" id="1_fgjrn"]
+
+[node name="dialogue" type="CanvasLayer"]
+script = ExtResource("1_7pmat")
+d_file = "\"res://dialogues/jsons/dialogue_test2.json\""
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 136.0
+offset_top = 471.0
+offset_right = 992.0
+offset_bottom = 485.0
+texture = ExtResource("1_fgjrn")
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = -42.0
+offset_right = 354.0
+offset_bottom = -2.0
+text = "name"
+
+[node name="chat" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 18.0
+offset_right = 948.0
+offset_bottom = 124.0
+text = "chatting........................................."
